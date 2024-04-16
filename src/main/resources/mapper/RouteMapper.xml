@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lxh.mapper.RouteMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lxh.pojo.Route">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="brief" property="brief" />
+        <result column="day" property="day" />
+        <result column="placenumber" property="placenumber" />
+        <result column="city" property="city" />
+        <result column="hot" property="hot" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, brief, day, placenumber, city, hot
+    </sql>
+
+</mapper>
