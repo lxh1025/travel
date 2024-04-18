@@ -38,6 +38,16 @@ public class PlaceController {
         return Result.success(pageInfo);
     }
 
+    @GetMapping("/placerank")
+    public Result<Page> hotRank(@RequestParam("page") int page, @RequestParam("pagesize") int pageSize){
+        Page<Place> pageInfo = new Page<>(page,pageSize);
+        LambdaQueryWrapper<Place> queryWrapper = new LambdaQueryWrapper<>();
+
+        queryWrapper.orderByDesc(Place::getHot);
+        placeService.page(pageInfo, queryWrapper);
+        return Result.success(pageInfo);
+    }
+
     /**
      * 通过主键查询单条数据
      *
